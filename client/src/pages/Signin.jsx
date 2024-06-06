@@ -9,6 +9,7 @@ export default function Signin() {
   // const [error, setError] = useState(null);
   // const [loading, setLoading] = useState(false);
   const { loading, error } = useSelector((state) => state.user);
+  // console.log(state.user);
 
   const navigate = useNavigate();
 
