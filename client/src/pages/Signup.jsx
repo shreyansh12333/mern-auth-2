@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 export default function Signup() {
@@ -13,6 +13,7 @@ export default function Signup() {
     });
     console.log(formData);
   };
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -26,6 +27,7 @@ export default function Signup() {
       });
       const data = await res.json();
       console.log(data);
+      navigate("/sign-in");
       setLoading(false);
       if (data.success === false) {
         setError(true);
