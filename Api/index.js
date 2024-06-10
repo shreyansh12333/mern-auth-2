@@ -26,7 +26,7 @@ app.use((err, req, res, next) => {
     statusCode,
   });
 });
-
+app.use("/api/auth", authRouter);
 app.listen(3000, () => {
   console.log("server listening on port 3000");
 });

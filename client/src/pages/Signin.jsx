@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { signInStart, signInSuccess, signInFailure } from "../redux/user/user";
 import { useDispatch, useSelector } from "react-redux";
+import OAuth from "../components/OAuth";
 
 export default function Signin() {
   const [formData, setFormData] = useState({});
@@ -73,9 +74,7 @@ export default function Signin() {
         >
           {loading ? "Loading...." : "Sign In"}
         </button>
-        <button className="bg-red-500 rounded-lg text-center p-3 uppercase text-white ">
-          continue with google
-        </button>
+        <OAuth />
       </form>
       <p className="mt-3">
         Don't have an account?
